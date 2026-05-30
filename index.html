@@ -239,6 +239,18 @@
     .install-grid { grid-template-columns: 1fr; }
     .yt-box { flex-direction: column; text-align: center; }
   }
+
+  /* POPUP */
+  .popup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .popup-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 22px;
+    transition: border-color 0.2s;
+  }
+  .popup-card:hover { border-color: #2a2a4a; }
+  .popup-title { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .popup-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
 </style>
 </head>
 <body>
@@ -273,20 +285,32 @@
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
-    <span>&#128737;&#65039; Canvas Fingerprint <em>RANDOMIZED</em></span>
-    <span>&#127917; WebGL Fingerprint <em>SPOOFED</em></span>
-    <span>&#128205; GPS from Photos <em>STRIPPED</em></span>
-    <span>&#127760; Noise Requests <em>SENT</em></span>
-    <span>&#9201;&#65039; Timing Attacks <em>BLOCKED</em></span>
-    <span>&#128268; WebRTC IP Leak <em>PREVENTED</em></span>
-    <span>&#128187; Hardware Info <em>MASKED</em></span>
-    <span>&#128737;&#65039; Canvas Fingerprint <em>RANDOMIZED</em></span>
-    <span>&#127917; WebGL Fingerprint <em>SPOOFED</em></span>
-    <span>&#128205; GPS from Photos <em>STRIPPED</em></span>
-    <span>&#127760; Noise Requests <em>SENT</em></span>
-    <span>&#9201;&#65039; Timing Attacks <em>BLOCKED</em></span>
-    <span>&#128268; WebRTC IP Leak <em>PREVENTED</em></span>
-    <span>&#128187; Hardware Info <em>MASKED</em></span>
+    <span>&#127917; Canvas <em>RANDOMIZED</em></span>
+    <span>&#128421;&#65039; WebGL <em>SPOOFED</em></span>
+    <span>&#127925; AudioContext <em>NOISED</em></span>
+    <span>&#128187; Hardware <em>MASKED</em></span>
+    <span>&#9201;&#65039; Timing <em>JITTERED</em></span>
+    <span>&#128268; WebRTC <em>BLOCKED</em></span>
+    <span>&#128205; Timezone <em>SPOOFED</em></span>
+    <span>&#127475;&#127482; Language <em>SPOOFED</em></span>
+    <span>&#128506; Geolocation <em>FAKED</em></span>
+    <span>&#128247; EXIF <em>STRIPPED</em></span>
+    <span>&#127760; Noise <em>SENT</em></span>
+    <span>&#128273; URL Params <em>STRIPPED</em></span>
+    <span>&#128465; Storage <em>CLEARED</em></span>
+    <span>&#127917; Canvas <em>RANDOMIZED</em></span>
+    <span>&#128421;&#65039; WebGL <em>SPOOFED</em></span>
+    <span>&#127925; AudioContext <em>NOISED</em></span>
+    <span>&#128187; Hardware <em>MASKED</em></span>
+    <span>&#9201;&#65039; Timing <em>JITTERED</em></span>
+    <span>&#128268; WebRTC <em>BLOCKED</em></span>
+    <span>&#128205; Timezone <em>SPOOFED</em></span>
+    <span>&#127475;&#127482; Language <em>SPOOFED</em></span>
+    <span>&#128506; Geolocation <em>FAKED</em></span>
+    <span>&#128247; EXIF <em>STRIPPED</em></span>
+    <span>&#127760; Noise <em>SENT</em></span>
+    <span>&#128273; URL Params <em>STRIPPED</em></span>
+    <span>&#128465; Storage <em>CLEARED</em></span>
   </div>
 </div>
 
@@ -303,7 +327,7 @@
   <div class="stats">
     <div class="stat-card"><div class="stat-num">$2B+</div><div class="stat-lbl">Palantir's US government contracts</div></div>
     <div class="stat-card"><div class="stat-num">400+</div><div class="stat-lbl">Data brokers selling your profile right now</div></div>
-    <div class="stat-card"><div class="stat-num">99.9%</div><div class="stat-lbl">Accuracy of browser fingerprinting without protection</div></div>
+    <div class="stat-card"><div class="stat-num">23</div><div class="stat-lbl">Active privacy shields in the extension</div></div>
     <div class="stat-card"><div class="stat-num">0</div><div class="stat-lbl">Federal data privacy laws in the US</div></div>
   </div>
 </section>
@@ -341,39 +365,99 @@
 <section id="features" style="padding-top:0">
   <div class="section-label">Features</div>
   <h2>Everything surveillance systems use against you. Neutralized.</h2>
-  <p class="section-desc">Seven active shields running silently in the background. Zero configuration required.</p>
+  <p class="section-desc">23 active shields across 7 toggleable modules. Every technique surveillance systems use against you &#8212; neutralized.</p>
   <div class="features">
     <div class="feature">
       <div class="feature-icon">&#127917;</div>
-      <div><div class="feature-title">Canvas Fingerprint Randomization</div><div class="feature-desc">Adds imperceptible noise to canvas pixel output. Same site, different fingerprint every session. Defeats the most common tracking technique on the web.</div></div>
+      <div><div class="feature-title">Canvas Fingerprint Randomization</div><div class="feature-desc">Adds subtle noise to all canvas toDataURL(), toBlob(), and getImageData() calls. Defeats the most common cross-site tracking technique.</div></div>
     </div>
     <div class="feature">
       <div class="feature-icon">&#128421;&#65039;</div>
-      <div><div class="feature-title">WebGL Fingerprint Spoofing</div><div class="feature-desc">Reports a randomized GPU renderer string to every website. Your actual graphics card is never revealed.</div></div>
+      <div><div class="feature-title">WebGL Renderer Spoofing</div><div class="feature-desc">Randomly returns fake GPU vendor/renderer strings via getParameter(). Prevents GPU-based device identification across sites.</div></div>
     </div>
     <div class="feature">
       <div class="feature-icon">&#128187;</div>
-      <div><div class="feature-title">Hardware Masking</div><div class="feature-desc">CPU core count, RAM size, and plugin list are randomized &#8212; eliminating device-level fingerprinting.</div></div>
+      <div><div class="feature-title">Hardware Fingerprint Masking</div><div class="feature-desc">Randomizes navigator.hardwareConcurrency, deviceMemory, and plugins. Your device appears as different hardware each visit.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#127925;</div>
+      <div><div class="feature-title">AudioContext Fingerprint Noise</div><div class="feature-desc">Adds noise to oscillator frequency, compressor threshold, and output timestamps. Defeats audio-based device fingerprinting.</div></div>
     </div>
     <div class="feature">
       <div class="feature-icon">&#127760;</div>
-      <div><div class="feature-title">Noise Browsing</div><div class="feature-desc">Silent background visits to unrelated sites pollute your behavioral profile. Surveillance systems can't tell your real interests from the noise.</div></div>
+      <div><div class="feature-title">Noise Browsing</div><div class="feature-desc">Silently visits decoy websites via hidden iframes (Chrome) or fetch (Firefox). Floods surveillance systems with fictional browsing behavior.</div></div>
     </div>
     <div class="feature">
       <div class="feature-icon">&#128247;</div>
-      <div><div class="feature-title">EXIF Photo Stripping</div><div class="feature-desc">GPS coordinates, device model, and timestamps are automatically removed from every photo you upload. You'll never accidentally expose your location again.</div></div>
+      <div><div class="feature-title">EXIF Photo Stripping</div><div class="feature-desc">Automatically removes GPS coordinates and metadata from uploaded images. Prevents location leakage when sharing photos online.</div></div>
     </div>
     <div class="feature">
       <div class="feature-icon">&#9201;&#65039;</div>
-      <div><div class="feature-title">Timing Jitter</div><div class="feature-desc">Adds small random delays to browser timing APIs, preventing clock-skew fingerprinting &#8212; a technique that identifies you across different networks.</div></div>
+      <div><div class="feature-title">Timing Jitter</div><div class="feature-desc">Adds micro-noise to Performance.now() and Date.now(). Defeats clock-skew fingerprinting that identifies devices by timing precision.</div></div>
     </div>
     <div class="feature">
       <div class="feature-icon">&#128268;</div>
-      <div><div class="feature-title">WebRTC IP Protection</div><div class="feature-desc">Blocks WebRTC from leaking your real IP address &#8212; a common failure point that exposes users even when using a VPN.</div></div>
+      <div><div class="feature-title">WebRTC IP Protection</div><div class="feature-desc">Clears ICE servers from RTCPeerConnection configurations. Prevents your real IP from leaking through browser peer-to-peer connections.</div></div>
     </div>
     <div class="feature">
-      <div class="feature-icon">&#127900;</div>
-      <div><div class="feature-title">Adjustable Intensity</div><div class="feature-desc">Control how aggressive the noise browsing is &#8212; from a quiet trickle to a full flood. Pause everything with one click when needed.</div></div>
+      <div class="feature-icon">&#128205;</div>
+      <div><div class="feature-title">Timezone Spoofing</div><div class="feature-desc">Returns a random timezone via Intl.DateTimeFormat.resolvedOptions(). Prevents location tracking through timezone detection.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#127475;&#127482;</div>
+      <div><div class="feature-title">Language Spoofing</div><div class="feature-desc">Randomizes navigator.language and navigator.languages. Blocks geo-identification via language preferences.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128506;</div>
+      <div><div class="feature-title">Geolocation Spoofing</div><div class="feature-desc">Returns a plausible fake GPS location when sites request your position. Protects your real physical location from websites.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128683;</div>
+      <div><div class="feature-title">Do Not Track Signal</div><div class="feature-desc">Sets navigator.doNotTrack = '1'. Signals to every website that you do not want to be tracked.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128267;</div>
+      <div><div class="feature-title">Battery API Spoofing</div><div class="feature-desc">Returns randomized fake battery status. Prevents battery-level fingerprinting that uniquely identifies devices.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#127909;</div>
+      <div><div class="feature-title">Media Device Label Stripping</div><div class="feature-desc">Strips device labels from enumerateDevices() output. Labels contain unique IDs that can fingerprint your hardware.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128187;</div>
+      <div><div class="feature-title">WebXR Blocking</div><div class="feature-desc">Removes navigator.xr API entirely. Prevents VR/AR headset fingerprinting that identifies your hardware setup.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128187;</div>
+      <div><div class="feature-title">Screen Resolution Noise</div><div class="feature-desc">Adds subtle random offset to screen.width/height/availWidth/availHeight. Defeats screen-based fingerprinting.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#9000;</div>
+      <div><div class="feature-title">Touch Points Randomization</div><div class="feature-desc">Randomizes navigator.maxTouchPoints. Prevents device type identification via touch capability.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128274;</div>
+      <div><div class="feature-title">Client Hints Blocking</div><div class="feature-desc">Blocks navigator.connection API and persistent-storage permission. Prevents Chrome&#39;s Client Hints fingerprinting system.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128273;</div>
+      <div><div class="feature-title">URL Tracking Parameter Stripping</div><div class="feature-desc">Removes 30+ tracking parameters (utm_*, fbclid, gclid, msclkid, etc.) from URLs. Prevents cross-site tracking via URL parameters.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128465;</div>
+      <div><div class="feature-title">Auto-Clear Storage</div><div class="feature-desc">Clears cookies, localStorage, sessionStorage, and IndexedDB when tabs close. Prevents persistent tracking via browser storage.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128737;&#65039;</div>
+      <div><div class="feature-title">Tracking Cookie Cleanup</div><div class="feature-desc">Automatically deletes known tracking cookies (_ga, _fbp, __utm, etc.) on page hide. Removes surveillance cookies without manual intervention.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128190;</div>
+      <div><div class="feature-title">Tracking localStorage Cleanup</div><div class="feature-desc">Removes localStorage items from known trackers (analytics, hotjar, clarity, etc.). Cleans up persistent tracking data.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128203;</div>
+      <div><div class="feature-title">Session Storage Clearing</div><div class="feature-desc">Clears sessionStorage on page unload. Prevents session-based fingerprinting persistence.</div></div>
     </div>
   </div>
 </section>
@@ -433,6 +517,44 @@
       <div class="promise-icon">&#9878;&#65039;</div>
       <div class="promise-title">Legally Sound</div>
       <div class="promise-desc">Reviewed by civil liberties attorneys. No hacking, no impersonation, no fraud. Just noise. Read our full legal analysis.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- POPUP UI -->
+<section id="popup" style="padding-top:0">
+  <div class="section-label">Extension Popup</div>
+  <h2>Full control at your fingertips.</h2>
+  <p class="section-desc">Toggle any protection on or off. Adjust noise intensity. See real-time stats. All from a single popup.</p>
+  <div class="popup-grid">
+    <div class="popup-card">
+      <div class="popup-title">Master Toggle</div>
+      <div class="popup-desc">Enable or disable all 23 protections at once. One click to go dark.</div>
+    </div>
+    <div class="popup-card">
+      <div class="popup-title">Fingerprint Protection</div>
+      <div class="popup-desc">Canvas &amp; WebGL toggle. Audio &amp; Device toggle. Control which fingerprinting vectors are active.</div>
+    </div>
+    <div class="popup-card">
+      <div class="popup-title">Noise &amp; Tracking</div>
+      <div class="popup-desc">Noise Browsing toggle. URL Tracking Parameter Stripping toggle. Control the noise and URL cleanup.</div>
+    </div>
+    <div class="popup-card">
+      <div class="popup-title">Network Protection</div>
+      <div class="popup-desc">Header Protection toggle. EXIF Photo Stripping toggle. Guard your network layer.</div>
+    </div>
+    <div class="popup-card">
+      <div class="popup-title">Storage &amp; Privacy</div>
+      <div class="popup-desc">Auto-Clear Storage toggle. Cookies, localStorage, sessionStorage, and IndexedDB wiped on tab close.</div>
+    </div>
+    <div class="popup-card">
+      <div class="popup-title">Noise Intensity</div>
+      <div class="popup-desc">Slider from Low (1) to High (10 decoy visits per cycle). Control how much noise you generate.</div>
+    </div>
+    <div class="popup-card">
+      <div class="popup-title">Live Statistics</div>
+      <div class="popup-desc">Total noise requests sent, last noise timestamp. See the protection working in real time.</div>
     </div>
   </div>
 </section>
